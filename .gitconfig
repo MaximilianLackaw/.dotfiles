@@ -1,0 +1,25 @@
+[init]
+	defaultBranch = master
+[core]
+	excludesfile = ~/.gitignore_global
+	editor = code --wait
+[push]
+	autoSetupRemote = true
+	default = current
+[alias]
+	s = status
+	A = add -A
+	co = checkout
+	cob = checkout -b
+	ball = branch --all
+	ci = commit
+	cim = commit -m
+	puf = push --force-with-lease
+	pp = push --prune
+	fp = fetch --prune
+	ciamend = commit --amend --no-edit
+	cif = commit --fixup
+	rb = rebase
+	rbi = rebase -i
+	rbia = rebase -i --autosquash
+
