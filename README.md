@@ -9,6 +9,7 @@ export REPO=$PWD # or path to this repo
 ln -s $REPO/.zshrc $HOME/.zshrc
 ln -s $REPO/.zsh $HOME/.zsh
 ln -s $REPO/starship.toml $HOME/.config/starship.toml
+ln -s $REPO/.vimrc $HOME/.vimrc
 
 touch $HOME/..gitignore_global
 ```
