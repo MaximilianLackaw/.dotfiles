@@ -11,6 +11,7 @@ source $ZPLUGINDIR/zsh_unplugged/zsh_unplugged.zsh
 
 # make list of the Zsh plugins you use
 repos=(
+  romkatv/powerlevel10k
   zsh-users/zsh-completions
   rupa/z
   djui/alias-tips
