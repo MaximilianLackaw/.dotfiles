@@ -12,6 +12,7 @@ $username\
 $directory\
 $git_branch\
 $git_status\
+$fill\
 $python\
 $aws\
 $golang\
@@ -30,7 +31,8 @@ $buf\
 $memory_usage\
 $docker_context\
 $battery\
-[](#1C3A5E)$time[ ](#1C3A5E)$cmd_duration
+$cmd_duration\
+[](#1C3A5E)$time[ ](#1C3A5E)
 [└─>](bold green) """
 
 
@@ -63,7 +65,8 @@ style = "bg:#1d2230"
 format = '[[ 󱑍 $time ](bg:#1C3A5E fg:#8DFBD2)]($style)'
 
 [cmd_duration]
-format = '[$duration](bold yellow)'
+format = 'took [$duration](bold yellow)'
+min_time = 5_000
 
 # ---
 
@@ -124,14 +127,17 @@ deleted = ' '
 
 [sudo]
 disabled = false
-format = '[as $symbol ]($style)'
+format = 'as [$symbol ]($style)'
 symbol ="🧙"
 style = 'bold white'
 
 [username]
 disabled = false
 show_always = false
-format = '[as $user ]($style)'
+format = 'as [$user ]($style)'
+
+[fill]
+symbol = ' '
 
 # ---
 
@@ -164,13 +170,15 @@ symbol = " "
 
 [memory_usage]
 symbol = "󰍛 "
-disabled = true
-style='bold dimmed white'
-threshold = 1
-format = "$symbol [${ram}(|${swap})]($style) "
+disabled = false
+style='bold yellow'
+threshold = 75
+# format = "$symbol [${ram}(|${swap})]($style) "
+format = "[$symbol$ram]($style) "
 
 [nodejs]
 symbol = " "
+format = "[$symbol($version)]($style) "
 
 [package]
 disabled = true
