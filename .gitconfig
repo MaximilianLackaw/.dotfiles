@@ -9,6 +9,7 @@
 [alias]
 	s = status
 	A = add -A
+	l = log
 	co = checkout
 	cob = checkout -b
 	ball = branch --all

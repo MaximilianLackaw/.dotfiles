@@ -17,11 +17,12 @@ alias tmn='tmux new -s $1'
 alias gs='git status'
 alias gd='git diff'
 alias gA='git add -A'
-alias gl='git l'
-alias gc='git commit'
+alias gl='git log'
+alias gci='git commit'
 alias gco='git checkout'
 alias gcob='git checkout -b'
 alias gpp='git pp'
+alias gitv='GIT_EDITOR=vim git'
 
 # Docker
 alias dkps="docker ps"
