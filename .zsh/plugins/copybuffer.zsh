@@ -1,4 +1,6 @@
-# copy the active line from the command line buffer 
+# From: https://github.com/guillaumeboehm/zsh-copybuffer
+
+# copy the active line from the command line buffer
 # onto the system clipboard
 
 #detect os

@@ -1,3 +1,5 @@
+# Modified version of https://github.com/sineto/web-search
+
 ## depending of xdg-utils
 ## https://github.com/theskumar/dotfiles/blob/master/.zsh/plugins/web_search/web_search.plugin.zsh
 
@@ -7,7 +9,7 @@ function web_search() {
   [[ "$OSTYPE" = linux* ]] && open_cmd='xdg-open'
   [[ "$OSTYPE" = darwin* ]] && open_cmd='open'
 
-  pattern='(google|duckduckgo|bing|yahoo|github|youtube)'
+  pattern='(google|duckduckgo|github|youtube)'
 
   # check whether the search engine is supported
   if [[ $1 =~ pattern ]];

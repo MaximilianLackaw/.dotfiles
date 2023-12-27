@@ -1,3 +1,5 @@
+# From: https://github.com/ohmyzsh/ohmyzsh/blob/master/plugins/sudo/sudo.plugin.zsh
+
 # ------------------------------------------------------------------------------
 # Description
 # -----------
