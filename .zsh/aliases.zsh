@@ -16,6 +16,7 @@ alias tmn='tmux new -s $1'
 # git
 alias gs='git status'
 alias gd='git diff'
+alias gds='git diff --staged'
 alias gA='git add -A'
 alias gl='git log'
 alias gci='git commit'
