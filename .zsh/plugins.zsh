@@ -51,4 +51,5 @@ plugin-load $repos
 [[ -f $ZPLUGINDIR/dirhistory.zsh ]] && zsh-defer . $ZPLUGINDIR/dirhistory.zsh
 [[ -f $ZPLUGINDIR/web-search.zsh ]] && zsh-defer . $ZPLUGINDIR/web-search.zsh
 [[ -f $ZPLUGINDIR/copybuffer.zsh ]] && zsh-defer . $ZPLUGINDIR/copybuffer.zsh
+source $ZPLUGINDIR/vsc.zsh
 
