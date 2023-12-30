@@ -11,6 +11,10 @@ bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
 
 # Starship (Best end of zshrc)
-# export STARSHIP_CONFIG=~/.zsh/starship.toml
-# default config path: ~/.config/starship.toml
+if [ "${TERM_PROGRAM}" = "vscode" ]; then
+  export STARSHIP_CONFIG=~/.config/starship-vscode.toml
+else
+  export STARSHIP_CONFIG=~/.config/starship.toml
+fi
+
 eval "$(starship init zsh)"

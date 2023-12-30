@@ -4,51 +4,28 @@ add_newline = false
 command_timeout = 1000
 
 format = """
+$os\
 $status\
-$os$hostname\
 $sudo\
-$username\
 $directory\
-$git_branch\
-$git_status\
-$fill\
-$python\
-$aws\
-$golang\
-$java\
-$nodejs\
-$rust\
-$ruby\
-$scala\
-$dart\
-$conda\
-$pijul_channel\
-$lua\
-$rlang\
-$package\
-$buf\
-$memory_usage\
-$docker_context\
-$battery\
-$cmd_duration\
-[](#1C3A5E)$time[ ](#1C3A5E)
-$character """
+$nodejs
+$character"""
 
 continuation_prompt = '▶▶ '
 
 [directory]
 truncation_length = 3
-truncation_symbol = '../'
+truncation_symbol = ''
 # fish_style_pwd_dir_length = 2
 home_symbol = '󰋜 ~'
 read_only_style = '197'
 read_only = '  '
-format = 'at [$path]($style)[$read_only]($read_only_style) '
+format = '[$path]($style)[$read_only]($read_only_style) '
 
 [nodejs]
-symbol = ' '
-format = '[$symbol($version)]($style) '
-version_format = '${raw}'
+symbol = " "
+format = "[$symbol($version)]($style) "
+version_format = '${major}'
 
 # shared config
 
