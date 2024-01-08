@@ -16,16 +16,24 @@
 	co = checkout
 	cob = checkout -b
 	ball = branch --all
+	bs = "!bt() { git branch; git branch -r --sort=-committerdate --color=always | head | sort;}; bt"
+	bD = branch -D
 	ci = commit
 	cim = commit -m
 	puf = push --force-with-lease
-	pp = push --prune
+	pp = pull --prune
 	fp = fetch --prune
 	ciamend = commit --amend --no-edit
 	cif = commit --fixup
 	rb = rebase
 	rbi = rebase -i
 	rbia = rebase -i --autosquash
+	hist = log --pretty=format:\"%C(auto)%h %ad | %s%d [%an]\" --graph --date=short
+	histn = !git --no-pager hist -5
+	deleteRemote = push origin --delete
+	resetAllStaged = git reset --hard HEAD
+	ignore = update-index --assume-unchanged
+	unignore = update-index --no-assume-unchanged
 
 [interactive]
 	diffFilter = diff-so-fancy --patch
