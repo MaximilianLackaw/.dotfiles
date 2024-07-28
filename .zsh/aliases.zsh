@@ -40,32 +40,61 @@ alias aptu='sudo apt update'
 alias apti='sudo apt install'
 alias aptug='sudo apt upgrade'
 
-
 # ls (lsd)
-alias l='lsd'
+if command -v lsd &> /dev/null
+then
+  alias l='lsd'
+else
+  alias l='ls'
+fi
 alias ll='l -l'
-# alias ll='ls -l'
 alias lla='ll -a'
 alias la='l -a'
 
-# zsh
-alias editzshconfig='code ~/.zshrc'
-alias editzshalias='code ~/Nextcloud/Settings/zsh/aliases.zsh'
-alias reload='source ~/.zshrc'
+# add parameters to common commands
+alias cp='cp -i'
+alias mv='mv -i'
+alias mkdir='mkdir -p'
 
 #misc
+alias svi='sudo vim'
+alias svim='sudo vim'
+alias bd='cd "$OLDPWD"'
+if command -v fzf &> /dev/null
+then
+  alias f="find . | fzf "
+else
+  alias f="find . | grep `$1`"
+fi
 alias hist='history 1 | grep `$1`'
-alias cat='batcat -n'
-alias free='free -m'
-alias copy="tr -d '\n' | pbcopy"
-alias pwdc='pwd | copy'  # copy current dir to clipboard
-alias pbcopy='xsel --clipboard --input'
-alias pbpaste='xsel --clipboard --output'
-alias copydir='echo $PWD | pbcopy'
-alias open='xdg-open' # WSL: install wslu and `sudo ln -s ../../bin/wslview /usr/local/bin/xdg-open`
-alias more=less
-alias autossh-default='autossh -M 0 -f -T -N'
-alias fixclock='sudo hwclock -s' # relevant for WSL after sleep
 
-# fixes for things which are not features but bugs
-# alias history='history 1'
+if command -v batcat &> /dev/null
+then
+  alias cat='batcat -n'
+elif command -v bat &> /dev/null
+then
+  alias cat='bat -n'
+fi
+
+alias free='free -m'
+
+if command -v wl-copy &> /dev/null
+then
+  alias ccopy="wl-copy"
+  alias cpaste='wl-paste'
+fi
+
+# TODO check for wsl equivalent
+
+if command -v ccopy &> /dev/null
+then
+  alias pwdc='pwd | ccopy'  # copy current dir to clipboard
+fi
+
+if command -v xdg-open &> /dev/null
+then
+  alias open='xdg-open' # WSL: install wslu and `sudo ln -s ../../bin/wslview /usr/local/bin/xdg-open`
+fi
+
+alias fixclock='sudo hwclock -s' # relevant for WSL after sleep
+alias reload='source ~/.zshrc'

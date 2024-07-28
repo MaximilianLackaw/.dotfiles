@@ -37,3 +37,4 @@ Add the following lines to your local git config
 * [fzf](https://github.com/junegunn/fzf?tab=readme-ov-file#linux-packages)
 * [bat](https://github.com/sharkdp/bat)
 * [lsd](https://github.com/lsd-rs/lsd)
+* [ws-copy](https://github.com/bugaevc/wl-clipboard) (when using wayland)
