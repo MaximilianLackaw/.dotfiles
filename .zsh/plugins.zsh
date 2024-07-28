@@ -40,6 +40,7 @@ repos=(
   zsh-users/zsh-history-substring-search
   unixorn/fzf-zsh-plugin # similar to history-substring-search
   zsh-users/zsh-autosuggestions
+  aloxaf/fzf-tab
   lukechilds/zsh-nvm
 )
 
