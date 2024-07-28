@@ -34,7 +34,7 @@ repos=(
   romkatv/zsh-defer
   # romkatv/powerlevel10k
   zsh-users/zsh-completions
-  rupa/z
+  # rupa/z
   djui/alias-tips
   # olets/zsh-abbr # makes no sens together with alias-tips
   zsh-users/zsh-history-substring-search

@@ -29,3 +29,11 @@ Add the following lines to your local git config
 [include]
   path = {Full path to this repo}/.gitconfig
 ```
+
+## Programs/tools to install
+* zsh (required)
+* [starship](https://github.com/starship/starship)
+* [zoxide](https://github.com/ajeetdsouza/zoxide)
+* [fzf](https://github.com/junegunn/fzf?tab=readme-ov-file#linux-packages)
+* [bat](https://github.com/sharkdp/bat)
+* [lsd](https://github.com/lsd-rs/lsd)
