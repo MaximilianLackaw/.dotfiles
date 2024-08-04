@@ -12,6 +12,7 @@ ln -s $REPO/starship.toml $HOME/.config/starship.toml
 ln -s $REPO/starship-vscode.toml $HOME/.config/starship-vscode.toml
 ln -s $REPO/.vimrc $HOME/.vimrc
 ln -s $REPO/.tmux.conf $HOME/.tmux.conf # or .tmux-wsl.conf
+ln -s $REPO/lsd $HOME/.config/lsd
 
 touch $HOME/.gitignore_global
 touch $HOME/.local-config.zsh
