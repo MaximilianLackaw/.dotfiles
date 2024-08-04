@@ -4,10 +4,6 @@
 
 ZSH_AUTOSUGGEST_STRATEGY=(history)
 
-bindkey '^w' autosuggest-execute
-bindkey '^e' autosuggest-accept
-bindkey '^u' autosuggest-toggle
-
 # nvm
 export NVM_COMPLETION=true
 export NVM_LAZY_LOAD=false

@@ -5,9 +5,18 @@ export ZSH=$HOME/.zsh
 [[ -f $ZSH/history.zsh ]] && source $ZSH/history.zsh
 [[ -f $HOME/.local-config.zsh ]] && source $HOME/.local-config.zsh  # local configs and aliases (optinal)
 [[ -f $ZSH/plugins.zsh ]] && source $ZSH/plugins.zsh
+[[ -f $ZSH/keybindings.zsh ]] && source $ZSH/keybindings.zsh
 
 if [ -d "$HOME/bin" ] ; then
   PATH="$PATH:$HOME/bin"
+fi
+
+if [ -d "$HOME/.local/bin" ] ; then
+  PATH="$PATH:$HOME/.local/bin"
+fi
+
+if [ -d "$HOME/.cargo/bin" ] ; then
+  PATH="$PATH:$HOME/.cargo/bin"
 fi
 
 # Starship (Best end of zshrc)
