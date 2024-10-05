@@ -1,26 +1,3 @@
-# -- Plugin Configs --------------------------------------
-
-# zsh-autosuggestions
-
-ZSH_AUTOSUGGEST_STRATEGY=(history)
-
-bindkey '^w' autosuggest-execute
-bindkey '^e' autosuggest-accept
-bindkey '^u' autosuggest-toggle
-
-# nvm
-export NVM_COMPLETION=true
-export NVM_LAZY_LOAD=false
-export NVM_AUTO_USE=true
-
-
-# Completion styling
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
-zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
-zstyle ':completion:*' menu no
-zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
-zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
-
 # -- Plugin "Manager" ----------------------------------
 
 # where do you want to store your plugins?
@@ -56,6 +33,29 @@ plugin-load $repos
 [[ -f $ZPLUGINDIR/web-search.zsh ]] && zsh-defer . $ZPLUGINDIR/web-search.zsh
 [[ -f $ZPLUGINDIR/copybuffer.zsh ]] && zsh-defer . $ZPLUGINDIR/copybuffer.zsh
 source $ZPLUGINDIR/vsc.zsh
+
+# -- Plugin Configs --------------------------------------
+
+# nvm
+export NVM_COMPLETION=true
+export NVM_LAZY_LOAD=true
+export NVM_AUTO_USE=true
+
+
+# Completion styling
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
+zstyle ':completion:*' menu no
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
+zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
+
+# zsh-autosuggestions
+
+ZSH_AUTOSUGGEST_STRATEGY=(history)
+
+bindkey '^w' autosuggest-execute
+bindkey '^e' autosuggest-accept
+bindkey '^u' autosuggest-toggle
 
 # Zoxide
 if command -v zoxide &> /dev/null
