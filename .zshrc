@@ -1,12 +1,5 @@
 export ZSH=$HOME/.zsh
 
-# [[ -f $ZSH/p10k.zsh ]] && source $ZSH/p10k.zsh # if disabled, also disabled plugin in `$ZSH/plugins.zsh`
-[[ -f $ZSH/aliases.zsh ]] && source $ZSH/aliases.zsh
-[[ -f $ZSH/history.zsh ]] && source $ZSH/history.zsh
-[[ -f $HOME/.local-config.zsh ]] && source $HOME/.local-config.zsh  # local configs and aliases (optinal)
-[[ -f $ZSH/plugins.zsh ]] && source $ZSH/plugins.zsh
-[[ -f $ZSH/keybindings.zsh ]] && source $ZSH/keybindings.zsh
-
 if [ -d "$HOME/bin" ] ; then
   PATH="$PATH:$HOME/bin"
 fi
@@ -18,6 +11,13 @@ fi
 if [ -d "$HOME/.cargo/bin" ] ; then
   PATH="$PATH:$HOME/.cargo/bin"
 fi
+
+# [[ -f $ZSH/p10k.zsh ]] && source $ZSH/p10k.zsh # if disabled, also disabled plugin in `$ZSH/plugins.zsh`
+[[ -f $ZSH/aliases.zsh ]] && source $ZSH/aliases.zsh
+[[ -f $ZSH/history.zsh ]] && source $ZSH/history.zsh
+[[ -f $HOME/.local-config.zsh ]] && source $HOME/.local-config.zsh  # local configs and aliases (optinal)
+[[ -f $ZSH/plugins.zsh ]] && source $ZSH/plugins.zsh
+[[ -f $ZSH/keybindings.zsh ]] && source $ZSH/keybindings.zsh
 
 # Starship (Best end of zshrc)
 if [ "${TERM_PROGRAM}" = "vscode" ]; then

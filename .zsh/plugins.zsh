@@ -4,11 +4,12 @@
 
 ZSH_AUTOSUGGEST_STRATEGY=(history)
 
+# -- Plugin Configs --------------------------------------
+
 # nvm
 export NVM_COMPLETION=true
-export NVM_LAZY_LOAD=false
+export NVM_LAZY_LOAD=true
 export NVM_AUTO_USE=true
-
 
 # Completion styling
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
@@ -52,6 +53,8 @@ plugin-load $repos
 [[ -f $ZPLUGINDIR/web-search.zsh ]] && zsh-defer . $ZPLUGINDIR/web-search.zsh
 [[ -f $ZPLUGINDIR/copybuffer.zsh ]] && zsh-defer . $ZPLUGINDIR/copybuffer.zsh
 source $ZPLUGINDIR/vsc.zsh
+
+# -- Load more plugins ----------------------------------
 
 # Zoxide
 if command -v zoxide &> /dev/null
