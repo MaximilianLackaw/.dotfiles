@@ -13,10 +13,12 @@
 	l = log
 	d = diff
 	ds = diff --staged
+	cleanup = "!git remote prune origin && git fetch --prune"
+	cp = cherry-pick
 	co = checkout
 	cob = checkout -b
 	ball = branch --all
-	bs = "!bt() { git branch; git branch -r --sort=-committerdate --color=always | head | sort;}; bt"
+	bs = "!bt() { git branch; git branch -r --sort=-committerdate --color=always | head -n 12 | sort;}; bt"
 	bD = branch -D
 	ci = commit
 	cim = commit -m
