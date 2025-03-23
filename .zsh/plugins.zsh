@@ -1,23 +1,24 @@
-# Settings
-
-## zsh-history-substring-search
-# bindkey '^[[A' history-substring-search-up
-# bindkey '^[[B' history-substring-search-down
-
-# works on wsl
-# bindkey "$terminfo[kcuu1]" history-substring-search-up
-# bindkey "$terminfo[kcud1]" history-substring-search-down
+# -- Plugin Configs --------------------------------------
 
 # zsh-autosuggestions
 
 ZSH_AUTOSUGGEST_STRATEGY=(history)
 
+# -- Plugin Configs --------------------------------------
+
 # nvm
 export NVM_COMPLETION=true
-export NVM_LAZY_LOAD=false
+export NVM_LAZY_LOAD=true
 export NVM_AUTO_USE=true
 
-# Plugin "Manager"
+# Completion styling
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
+zstyle ':completion:*' menu no
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
+zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
+
+# -- Plugin "Manager" ----------------------------------
 
 # where do you want to store your plugins?
 ZPLUGINDIR=$HOME/.zsh/plugins
@@ -30,17 +31,16 @@ source $ZPLUGINDIR/zsh_unplugged/zsh_unplugged.zsh
 
 # make list of the Zsh plugins you use
 repos=(
-  zsh-users/zsh-syntax-highlighting # always before history-substring-search
-  romkatv/zsh-defer
-  # romkatv/powerlevel10k
-  zsh-users/zsh-completions
-  # rupa/z
-  djui/alias-tips
-  # olets/zsh-abbr # makes no sens together with alias-tips
-  zsh-users/zsh-history-substring-search
-  unixorn/fzf-zsh-plugin # similar to history-substring-search
-  zsh-users/zsh-autosuggestions
   aloxaf/fzf-tab
+  zsh-users/zsh-syntax-highlighting
+  romkatv/zsh-defer
+  zsh-users/zsh-completions
+  # romkatv/powerlevel10k   # replaced by starship
+  # rupa/z   # replaced by zoxide
+  djui/alias-tips
+  zsh-users/zsh-autosuggestions
+  # unixorn/fzf-zsh-plugin # replaced by atuin
+  so-fancy/diff-so-fancy
   lukechilds/zsh-nvm
 )
 
@@ -49,8 +49,24 @@ plugin-load $repos
 
 # load non git managed plugins
 [[ -f $ZPLUGINDIR/sudo.zsh ]] && zsh-defer . $ZPLUGINDIR/sudo.zsh
-[[ -f $ZPLUGINDIR/dirhistory.zsh ]] && zsh-defer . $ZPLUGINDIR/dirhistory.zsh
+# [[ -f $ZPLUGINDIR/dirhistory.zsh ]] && zsh-defer . $ZPLUGINDIR/dirhistory.zsh
 [[ -f $ZPLUGINDIR/web-search.zsh ]] && zsh-defer . $ZPLUGINDIR/web-search.zsh
 [[ -f $ZPLUGINDIR/copybuffer.zsh ]] && zsh-defer . $ZPLUGINDIR/copybuffer.zsh
 source $ZPLUGINDIR/vsc.zsh
 
+# -- Load more plugins ----------------------------------
+
+# Zoxide
+if command -v zoxide &> /dev/null
+then
+  eval "$(zoxide init --cmd cd zsh)"
+fi
+
+# Atuin
+
+if [[ -f "$HOME/.atuin/bin/env" ]]
+then
+  . "$HOME/.atuin/bin/env"
+
+  eval "$(atuin init zsh --disable-up-arrow)"
+fi

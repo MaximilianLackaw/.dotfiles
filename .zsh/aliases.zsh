@@ -25,6 +25,9 @@ alias gcob='git checkout -b'
 alias gpp='git pp'
 alias gitv='GIT_EDITOR=vim git'
 
+# NPM/Node
+alias nr='npm run'
+
 # Docker
 alias dkps="docker ps"
 alias dkst="docker stats"
@@ -34,6 +37,7 @@ alias dkcpup="docker-compose up -d"
 alias dkcpdown="docker-compose down"
 alias dkcpstart="docker-compose start"
 alias dkcpstop="docker-compose stop"
+alias dkcprestart="docker-compose down && docker-compose up -d"
 
 # apt
 alias aptu='sudo apt update'
@@ -44,12 +48,15 @@ alias aptug='sudo apt upgrade'
 if command -v lsd &> /dev/null
 then
   alias l='lsd'
+  alias llg='ll -g'
+  alias llt='ll --total-size'
+  alias llS='llt -S'
 else
-  alias l='ls'
+  alias l='ls -h'
 fi
 alias ll='l -l'
-alias lla='ll -a'
-alias la='l -a'
+alias lla='ll -A'
+alias la='l -A'
 
 # add parameters to common commands
 alias cp='cp -i'
@@ -75,6 +82,7 @@ elif command -v bat &> /dev/null
 then
   alias cat='bat -n'
 fi
+alias df='df -h -x overlay'
 
 alias free='free -m'
 
