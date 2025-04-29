@@ -72,19 +72,6 @@ alias df='df -h -x overlay'
 
 alias free='free -m'
 
-if command -v wl-copy &> /dev/null
-then
-  alias ccopy="wl-copy"
-  alias cpaste='wl-paste'
-fi
-
-# TODO check for wsl equivalent
-
-if command -v ccopy &> /dev/null
-then
-  alias pwdc='pwd | ccopy'  # copy current dir to clipboard
-fi
-
 if command -v xdg-open &> /dev/null
 then
   alias open='xdg-open' # WSL: install wslu and `sudo ln -s ../../bin/wslview /usr/local/bin/xdg-open`
