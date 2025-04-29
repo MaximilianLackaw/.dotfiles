@@ -13,6 +13,7 @@ ln -s $REPO/starship-vscode.toml $HOME/.config/starship-vscode.toml
 ln -s $REPO/.vimrc $HOME/.vimrc
 ln -s $REPO/.tmux.conf $HOME/.tmux.conf # or .tmux-wsl.conf
 ln -s $REPO/lsd $HOME/.config/lsd
+ln -s $REPO/eza/dracula.yml ~/.config/eza/theme.yml
 
 touch $HOME/.gitignore_global
 touch $HOME/.local-config.zsh
@@ -33,9 +34,10 @@ Add the following lines to your local git config
 
 ## Programs/tools to install
 * zsh (required)
+* [fzf](https://github.com/junegunn/fzf?tab=readme-ov-file#linux-packages) (required)
 * [starship](https://github.com/starship/starship)
 * [zoxide](https://github.com/ajeetdsouza/zoxide)
-* [fzf](https://github.com/junegunn/fzf?tab=readme-ov-file#linux-packages)
 * [bat](https://github.com/sharkdp/bat)
-* [lsd](https://github.com/lsd-rs/lsd)
+* [eza](https://github.com/eza-community/eza)
+* [lsd](https://github.com/lsd-rs/lsd) (alternative to eza)
 * [ws-copy](https://github.com/bugaevc/wl-clipboard) (when using wayland)

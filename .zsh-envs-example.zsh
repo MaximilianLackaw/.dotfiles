@@ -1,0 +1,1 @@
+LS_TOOL="eza"  # Options: "eza", "lsd", "ls", or empty for auto-detection

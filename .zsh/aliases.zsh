@@ -44,20 +44,6 @@ alias aptu='sudo apt update'
 alias apti='sudo apt install'
 alias aptug='sudo apt upgrade'
 
-# ls (lsd)
-if command -v lsd &> /dev/null
-then
-  alias l='lsd'
-  alias llg='ll -g'
-  alias llt='ll --total-size'
-  alias llS='llt -S'
-else
-  alias l='ls -h'
-fi
-alias ll='l -l'
-alias lla='ll -A'
-alias la='l -A'
-
 # add parameters to common commands
 alias cp='cp -i'
 alias mv='mv -i'
