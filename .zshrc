@@ -22,14 +22,14 @@ fi
 [[ -f $ZSH/plugins.zsh ]] && source $ZSH/plugins.zsh
 [[ -f $ZSH/keybindings.zsh ]] && source $ZSH/keybindings.zsh
 
-# Starship (Best end of zshrc)
-if [ "${TERM_PROGRAM}" = "vscode" ]; then
-  export STARSHIP_CONFIG=~/.config/starship-vscode.toml
-else
-  export STARSHIP_CONFIG=~/.config/starship.toml
-fi
 
 if command -v starship &> /dev/null
 then
+  if [ "${TERM_PROGRAM}" = "vscode" ]; then
+    export STARSHIP_CONFIG=~/.config/starship-vscode.toml
+  else
+    export STARSHIP_CONFIG=~/.config/starship.toml
+  fi
+
   eval "$(starship init zsh)"
 fi
