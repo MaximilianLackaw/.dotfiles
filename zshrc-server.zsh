@@ -17,6 +17,7 @@ alias tm='tmux'
 alias tmls='tmux ls'
 alias tma='tmux attach-session -t $1'
 alias tmn='tmux new -s $1'
+alias mux='tmux new -A -s base-remote'
 
 ## Docker
 alias dkps="docker ps"
